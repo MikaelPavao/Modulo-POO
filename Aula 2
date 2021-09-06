@@ -1,0 +1,116 @@
+package aula2;
+
+public class Aula2 { 
+    public static void main(String[] args) {
+        Mario m1 = new Mario();
+        
+        m1.cor = "Branco";
+        m1.altura = 1.55;
+        m1.bigode = "Castanho";
+        m1.corCabelo = "Castanho";
+        m1.corCamisa = "Vermelha";
+        m1.corMacacao = "Azul";
+        m1.corBotoesMacacao = "Amarelo";
+        m1.corBone = "Vermelho";
+        m1.simboloBone = "M";
+        m1.corLuvas = "Brancas";
+        m1.corSapatos = "Pretos";
+        m1.ocupacao = "Encanador";
+        m1.estrela = false;
+        m1.flor = false;
+        m1.pena = false;
+        m1.cogumelo = false;
+        m1.PegarCogumelo();
+        m1.Invencivel();
+        m1.AcabouInvencibilidade();
+        m1.PegarPena();
+        m1.Caracteristicas();
+    }
+
+   
+    
+}
+-------------------------------------
+package aula2;
+public class Mario {
+    String cor;
+    Double altura;
+    String bigode;
+    String corCabelo;
+    String corCamisa;
+    String corMacacao;
+    String corBotoesMacacao;
+    String corBone;
+    String simboloBone;
+    String corLuvas;
+    String corSapatos;
+    String ocupacao;
+    Boolean estrela;
+    Boolean flor;
+    Boolean pena;
+    Boolean cogumelo;
+    
+      
+    void Caracteristicas(){
+    
+        System.out.println("A cor da pele é: " + this.cor);
+        System.out.println("A sua altura é: " + this.altura);
+        System.out.println("A cor do bigode é: " + this.bigode);
+        System.out.println("A cor do cabelo é: " + this.corCabelo);
+        System.out.println("A cor da camisa é: " + this.corCamisa);
+        System.out.println("A cor do macacão é: " + this.corMacacao);
+        System.out.println("A cor dos botões é: " + this.corBotoesMacacao);
+        System.out.println("A cor do boné é: " + this.corBone);
+        System.out.println("O simbolo do boné é: " + this.simboloBone);
+        System.out.println("A cor das luvas são: " + this.corLuvas);
+        System.out.println("A cor dos sapatos é: " + this.corSapatos);
+        System.out.println("Sua ocupação é: " + this.ocupacao);
+        if(this.estrela == true){
+            
+            System.out.println("O mario está invencível.");
+        
+        } 
+        if(this.cogumelo == true){
+        
+            System.out.println("O mario ficou grande.");
+        }
+        if(this.pena == true){
+        
+            System.out.println("O mario pode voar.");
+        }
+    }
+    
+    void Invencivel(){
+    
+        this.estrela = true;
+    
+    }
+    
+    void AcabouInvencibilidade(){
+    
+        this.estrela = false;
+    
+    }
+    
+    void TomarDano(){
+    
+        this.altura--;
+        this.pena = false;
+        this.flor = false;
+        this.flor = false;
+    }
+    
+    void PegarCogumelo(){
+    
+        this.cogumelo = true;
+        
+        this.altura++;
+               
+    }
+    
+    void PegarPena(){
+    
+        this.pena = true;
+    
+    }
+}
