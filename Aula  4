@@ -1,0 +1,238 @@
+package aula2;
+
+public class Aula2 { 
+    public static void main(String[] args) {
+        Mario m1 = new Mario("Mario Bros", 100 , 40 , 1.50);
+        m1.setEstrela(true);
+        m1.setCogumelo(true);
+        m1.Caracteristicas();
+       
+    }
+
+   
+    
+}
+----------------------------------
+
+package aula2;
+public class Mario {
+    private String nome;
+    private Integer idade;
+    private Integer stamina;
+    private String corPele;
+    private Double altura;
+    private String corCabelo;
+    private String corCamisa;
+    private String corMacacao;
+    private String corBone;
+    private String corLuvas;
+    private String corSapatos;
+    private String ocupacao;
+    private Boolean estrela;
+    private Boolean flor;
+    private Boolean pena;
+    private Boolean cogumelo;
+    //Metodo construtor
+    public Mario(String nome, Integer idade, Integer stamina, Double altura) {
+        this.setNome(nome);
+        this.setIdade(idade);
+        this.setStamina(stamina);
+        this.setAltura(altura);
+        this.setCorCabelo("Preto");
+        this.setCorPele("Moreno");
+        this.setCorCamisa("Vermelha");
+        this.setCorMacacao("Azul");
+        this.setCorBone("Vermelho");
+        this.setCorLuvas("Brancas");
+        this.setCorSapatos("Brancos");
+        this.setOcupacao("Mecânico");
+        this.setEstrela(false);
+        this.setFlor(false);
+        this.setPena(false);
+        this.setCogumelo(false);
+    }
+       // Getters e Setters
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public Integer getIdade() {
+        return idade;
+    }
+
+    public void setIdade(Integer idade) {
+        this.idade = idade;
+    }
+
+    public Integer getStamina() {
+        return stamina;
+    }
+
+    public void setStamina(Integer stamina) {
+        this.stamina = stamina;
+    }
+
+    public String getCorPele() {
+        return corPele;
+    }
+
+    public void setCorPele(String corPele) {
+        this.corPele = corPele;
+    }
+
+    public Double getAltura() {
+        return altura;
+    }
+
+    public void setAltura(Double altura) {
+        this.altura = altura;
+    }
+
+    public String getCorCabelo() {
+        return corCabelo;
+    }
+
+    public void setCorCabelo(String corCabelo) {
+        this.corCabelo = corCabelo;
+    }
+
+    public String getCorCamisa() {
+        return corCamisa;
+    }
+
+    public void setCorCamisa(String corCamisa) {
+        this.corCamisa = corCamisa;
+    }
+
+    public String getCorMacacao() {
+        return corMacacao;
+    }
+
+    public void setCorMacacao(String corMacacao) {
+        this.corMacacao = corMacacao;
+    }
+
+    public String getCorBone() {
+        return corBone;
+    }
+
+    public void setCorBone(String corBone) {
+        this.corBone = corBone;
+    }
+
+    public String getCorLuvas() {
+        return corLuvas;
+    }
+
+    public void setCorLuvas(String corLuvas) {
+        this.corLuvas = corLuvas;
+    }
+
+    public String getCorSapatos() {
+        return corSapatos;
+    }
+
+    public void setCorSapatos(String corSapatos) {
+        this.corSapatos = corSapatos;
+    }
+
+    public String getOcupacao() {
+        return ocupacao;
+    }
+
+    public void setOcupacao(String ocupacao) {
+        this.ocupacao = ocupacao;
+    }
+
+    public Boolean getEstrela() {
+        return estrela;
+    }
+
+    public void setEstrela(Boolean estrela) {
+        this.estrela = estrela;
+    }
+
+    public Boolean getFlor() {
+        return flor;
+    }
+
+    public void setFlor(Boolean flor) {
+        this.flor = flor;
+    }
+
+    public Boolean getPena() {
+        return pena;
+    }
+
+    public void setPena(Boolean pena) {
+        this.pena = pena;
+    }
+
+    public Boolean getCogumelo() {
+        return cogumelo;
+    }
+
+    public void setCogumelo(Boolean cogumelo) {
+        this.cogumelo = cogumelo;
+    }             
+    //metodo para mostrar as caracteristicas do mario
+    void Caracteristicas(){
+    
+        System.out.println("Seu nome é: " + this.getNome());
+        System.out.println("O valor da stamina é: " + this.getStamina());
+        System.out.println("Sua idade é: " + this.getIdade());
+        System.out.println("A cor da pele é: " + this.getCorPele());
+        System.out.println("A sua altura é: " + this.getAltura());
+        System.out.println("A cor do cabelo é: " + this.getCorCabelo());
+        System.out.println("A cor da camisa é: " + this.getCorCamisa());
+        System.out.println("A cor do macacão é: " + this.getCorMacacao());
+        System.out.println("A cor do boné é: " + this.getCorBone());
+        System.out.println("A cor das luvas são: " + this.getCorLuvas());
+        System.out.println("A cor dos sapatos é: " + this.getCorSapatos());
+        System.out.println("Sua ocupação é: " + this.getOcupacao());
+        if(this.estrela == true){
+            
+            System.out.println("O mario está invencível.");
+        
+        } 
+        if(this.cogumelo == true){
+        
+            System.out.println("O mario ficou grande.");
+        }
+        if(this.pena == true){
+        
+            System.out.println("O mario pode voar.");
+        }
+    }
+    
+    //metodos com super poderes 
+    public void Invencivel(){
+    
+        this.estrela = true;
+    
+    }
+    
+    public void AcabouInvencibilidade(){
+    
+        this.estrela = false;
+    
+    }   
+        
+    public void PegarCogumelo(){
+    
+        this.cogumelo = true;
+        
+            this.altura++;
+                
+    }
+    
+    public void PegarPena(){
+    
+        this.pena = true;
+    
+    }
+}
