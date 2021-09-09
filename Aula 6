@@ -1,0 +1,176 @@
+package aula2;
+
+public class Aula2 { 
+    public static void main(String[] args) {
+        Mario m1 = new Mario(0 , "Mario Bros", 50 , 100 , 1.50 , 1);
+        m1.revigorar();
+        m1.crescer();
+        m1.ganharMoedas();
+        m1.ganharMoedas();
+        m1.ganharMoedas();
+        m1.morrer();
+        m1.perderStamina();
+        m1.ganharMoedas();
+        m1.ganharMoedas();
+        m1.perderStamina();
+        m1.ganharMoedas();
+        m1.perderStamina();
+        
+        m1.caracteristicas();
+       
+    }      
+}
+-------------------------------
+package aula2;
+public class Mario {
+    private Integer vidas;
+    private Integer qtdMoedas;
+    private String nome;
+    private Integer idade;
+    private Integer stamina;
+    private String corPele;
+    private Double altura;
+    private String corCabelo;
+    private String corCamisa;
+    private String corMacacao;
+    private String corBone;
+    private String corLuvas;
+    private String corSapatos;
+    private String ocupacao;
+    private Boolean estrela;
+    private Boolean flor;
+    private Boolean pena;
+    private Boolean cogumelo;
+
+    public Mario(Integer moeda, String nome, Integer idade,Integer stamina, Double altura, Integer vida) {
+        
+        this.qtdMoedas = moeda;
+        this.vidas = vida;
+        this.nome = nome;
+        this.idade = idade;
+        this.stamina = stamina;
+        this.altura = altura;       
+        this.corCabelo ="Preto";
+        this.corPele = "Moreno";
+        this.corCamisa = "Vermelha";
+        this.corMacacao = "Azul";
+        this.corBone = "Vermelho";
+        this.corLuvas = "Brancas";
+        this.corSapatos = "Brancos";
+        this.ocupacao = "Mecânico";
+        this.estrela = false;
+        this.flor = false;
+        this.pena = false;
+        this.cogumelo = false;
+    }          
+    
+    void caracteristicas(){
+        
+        System.out.println("Número de vidas: " + this.vidas);
+        System.out.println("O mario tem " + this.qtdMoedas + " moeda(as)");
+        System.out.println("Seu nome é: " + this.nome);
+        System.out.println("O valor da stamina é: " + this.stamina);
+        System.out.println("Sua idade é: " + this.idade);
+        System.out.println("A cor da pele é: " + this.corPele);
+        System.out.println("A sua altura é: " + this.altura);
+        System.out.println("A cor do cabelo é: " + this.corCabelo);
+        System.out.println("A cor da camisa é: " + this.corCamisa);
+        System.out.println("A cor do macacão é: " + this.corMacacao);
+        System.out.println("A cor do boné é: " + this.corBone);
+        System.out.println("A cor das luvas são: " + this.corLuvas);
+        System.out.println("A cor dos sapatos é: " + this.corSapatos);
+        System.out.println("Sua ocupação é: " + this.ocupacao);
+        if(this.estrela == true){
+            
+            System.out.println("O mario está invencível.");
+        
+        } 
+        if(this.cogumelo == true){
+        
+            System.out.println("O mario ficou grande.");
+        }
+        if(this.pena == true){
+        
+            System.out.println("O mario pode voar.");
+        }
+    }
+    
+    public void ganharMoedas(){
+        
+        
+        this.qtdMoedas = qtdMoedas +1;
+       
+       if(this.qtdMoedas % 10 == 0){
+           
+           this.vidas = vidas +1;
+       
+       } 
+    
+    }
+    
+    public void morrer(){
+    
+        this.stamina = 0;
+        this.vidas = vidas -1;
+        
+        if(this.vidas < 0){
+            
+            this.stamina = 0;
+            this.vidas = 0;
+        
+        }else if(this.vidas >= 0){
+        
+            this.stamina = 100;
+        
+        }
+        
+    }
+    
+    public void revigorar(){
+        
+        this.stamina = 100;       
+    
+    }
+    public void invencivel(){
+    
+        this.estrela = true;
+    
+    }
+    
+    public void acabouInvencibilidade(){
+    
+        this.estrela = false;
+    
+    }   
+        
+    public void crescer(){
+    
+        this.cogumelo = true;        
+                            
+    }
+    
+    public void pegarPena(){
+    
+        this.pena = true;
+    
+    }
+    public void perderStamina(){
+      
+        this.stamina = stamina - 10;
+        if(this.stamina < 0){
+            this.stamina = 0;
+            System.out.println("Mario morreu");
+        }
+    
+    }
+    
+    public void ganharStamina(){
+    
+        this.stamina = stamina + 5;
+        if(stamina > 100){
+            stamina = 100;
+            System.out.println("Stamina chegou ao maximo");
+        }
+    
+    }
+}
